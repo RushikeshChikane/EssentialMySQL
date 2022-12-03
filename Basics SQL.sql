@@ -167,6 +167,26 @@ select lastname,firstname,officeCode from employees where officeCode <= 4;
   select distinct state,city from customers where state is not null order by  state,city;             
           /*in this statement shows the duplicate values*/
   select state ,city from customers where state is not null order by state,city;        
-               
-               
+    
+    
+    /*AND operator*/
+    
+    
+    /*A AND B*/
+    /*The logical AND operator returns 1 if both A and B are non-zero and NOT NULL. For example:*/
+    SELECT 1 AND 1;
+    /* The logical AND operator returns 0 if A or B is zero or both A and B are zero:*/
+    SELECT 1 AND 0, 0 AND 1, 0 AND 0, 0 AND NULL;
+    /*The logical AND operator returns NULL if either operand is non-zero or both operands are NULL.*/
+	SELECT 1 AND NULL, NULL AND NULL;
+    /*This is called short-circuit evaluation. In other words, the AND operator is short-circuited. */
+    SELECT 1 = 0 AND 1 / 0 ;
+    
+    select * from customers;
+    /*in this statement we can fide the dta who have same state and country with and operator*/
+    select customername,country,state from customers where country = 'USA' AND state = 'CA';
+     /*in this statement we can find all unique data from customer*/
+     select customername,country,state,creditlimit from customers where country='USA' and state='CA' and creditlimit > 100000;
+
+/*OR Operator */
 
