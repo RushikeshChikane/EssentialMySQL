@@ -106,7 +106,7 @@ select select-list from table-name where search-cindition;
 */
 
 select * from employees;
-/* this statements gives the value of all sales rep in jobtitle from employees*/
+/*1st this statements gives the value of all sales rep in jobtitle from employees*/
 SELECT lastname, firstname, jobtitle FROM employees WHERE jobtitle = 'Sales Rep';
 
 /*2nd  WHERE claus with AND operator for getting same or combine data from table*/
@@ -125,10 +125,10 @@ select firstName,lastName from employees where lastName like '%son' order by fir
 
 /*6th where with in operatoe*/
 /* in operator is use to find operators who locate i the office with office code 1*/
-
+SELECT firstName, lastName, officeCode FROM employees WHERE officeCode IN (1 , 2, 3) ORDER BY  officeCode;
 
 /*7 th where with null operator*/
-/*it gives information about where is the null value in reportsTo table
+/*it gives information about where is the null value in reportsTo table*/
 select lastName,firstName,reportsTo from employees where reportsTo is Null;
 
 
