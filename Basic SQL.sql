@@ -1,3 +1,5 @@
+                 /*SECTION 1*/
+
 /*This commnd is used for Showing total available databases list in mysql*/
 show databases;
 
