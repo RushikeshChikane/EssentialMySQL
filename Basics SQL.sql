@@ -98,10 +98,38 @@ SELECT firstName, lastName, reportsTo FROM employees ORDER BY reportsTo DESC;
 
          /*FILTERING DATA*/
          
-         /* 1st WHERE*/
+/* 1st WHERE*/
+/*where statement is allows you to specity search conditions for the rows return by query
+statement is
+
+select select-list from table-name where search-cindition;
+*/
+
+select * from employees;
+/* this statements gives the value of all sales rep in jobtitle from employees*/
+SELECT lastname, firstname, jobtitle FROM employees WHERE jobtitle = 'Sales Rep';
+
+/*2nd  WHERE claus with AND operator for getting same or combine data from table*/
+select lastname,firstname,jobtitle,officecode from employees where jobtitle ='Sales Rep' AND officeCode =1;
+
+/*3rd WHERE wirh OR operator gives both data from  table*/
+select lastname,firstname,jobTitle,officeCode from employees  where jobtitle ='Sales Rep' or officeCode =1 order by officeCode,jobTitle;
+
+/*4th where with between and Operetor*/
+/* between operator gives officeCode value between 1 and 3 */
+select firstName,lastName,officeCode from employees where officeCode between 1 and 3 order by officeCode;
+
+/*5th where with like operator*/
+/* with like opertor we find the specific data from fname,lname ect*/
+select firstName,lastName from employees where lastName like '%son' order by firstName;
+
+/*6th where with in operatoe*/
+/* in operator is use to find operators who locate i the office with office code 1*/
 
 
-
+/*7 th where with null operator*/
+/*it gives information about where is the null value in reportsTo table
+select lastName,firstName,reportsTo from employees where reportsTo is Null;
 
 
 
