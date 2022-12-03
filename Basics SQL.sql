@@ -47,9 +47,13 @@ select concat("Rushikesh"," ","Chiane")as Name;
 select concat("Rushikesh"," ","Chiane")as 'Full Name';
 select now()as 'Current datetime';
 
+
+
+
+
                /*SORTING DATA*/
                
-               /*ORDER by SQL statements*/
+/*ORDER by SQL statements*/
  
  /*from this command and statement we access the data in algorithm like assending order and decending order stc*/
  /*SELECT select_list FROM table_name ORDER BY column1 [ASC|DESC], column2 [ASC|DESC],...;   */     
@@ -71,14 +75,14 @@ SELECT contactLastname, contactFirstname FROM customers ORDER BY contactLastname
 /*in this example data will be shown like contact las name in desc order and contact first name in assending order*/
 SELECT contactLastname, contactFirstname FROM customers ORDER BY contactLastname DESC , contactFirstname ASC;
 
-/*from this statement we fine the total price of order in desending  order with the help of multiplication symbol and alo use data from quantity order and price each column*/ 
+/* C from this statement we fine the total price of order in desending  order with the help of multiplication symbol and alo use data from quantity order and price each column*/ 
 SELECT  orderNumber, orderlinenumber, quantityOrdered * priceEach FROM orderdetails ORDER BY quantityOrdered * priceEach DESC;
 
 /*in this statement we gave subtotal name as to the total of quantity order and priceEach*/
 SELECT orderNumber,orderLineNumber,quantityOrdered * priceEach AS subtotal FROM orderdetails ORDER BY subtotal DESC;
 
               
-			/*Order by with Custom list*/
+/*Order by with Custom list*/
             
  /*syntax of select field              
 select field('A','A',B','C'); */               
@@ -87,7 +91,7 @@ SELECT * FROM ORDERS;
 /* by using custom list we show the status of Orders like  1ST ALL DATA in progress, 2ND ALL DATA on hold, 3RD ALL DATA canceled etc*/
 SELECT orderNumber, status FROM orders ORDER BY FIELD(status,'In Process','On Hold','Cancelled','Resolved','Disputed','Shipped');
                
-               /*Order BY and NUll*/
+	/*Order BY and NUll*/
                
 select * from employees;
 
@@ -96,7 +100,14 @@ select firstName, lastName, reportsTo from employees order by reportsTo;
 SELECT firstName, lastName, reportsTo FROM employees ORDER BY reportsTo DESC;
 
 
-         /*FILTERING DATA*/
+		
+        
+        
+        
+      
+      
+        
+        /*FILTERING DATA*/
          
 /* 1st WHERE*/
 /*where statement is allows you to specity search conditions for the rows return by query
