@@ -150,11 +150,23 @@ select lastname,firstname,jobtitle from employees where jobtitle <>'Sales Rep';
 select lastname,firstname,officeCode from employees where officeCode > 5;
 /* <= (less than or equal to) operator*/
 select lastname,firstname,officeCode from employees where officeCode <= 4;
-               
-               
-               
-               
-               
+  
+  
+  
+  /*Distinct claus*/
+  /*When querying data from a table, you may get duplicate rows. To remove these duplicate rows, you use the DISTINCT clause in the SELECT statement.*/
+  select * from  customers;
+  
+  select lastname from employees order by lastname;  /*(without distinct keyword you may get duplicate datas*/
+  select distinct lastname from employees order by lastname;  /*(and when we use distinct claus it delet duplicate data and gives once)*/
+  select distinct state from customers;         
+  
+  /*distinct with multiplr columns*/
+  /*when specify multiple columns with distinct claus that time  clause will gives the combination of values in these columns to determine the uniqueness of the row in the result set.*/
+          /*in this statement dident shoes  duplicate  values*/          
+  select distinct state,city from customers where state is not null order by  state,city;             
+          /*in this statement shows the duplicate values*/
+  select state ,city from customers where state is not null order by state,city;        
                
                
 
