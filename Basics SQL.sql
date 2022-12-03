@@ -142,11 +142,14 @@ SELECT firstName, lastName, officeCode FROM employees WHERE officeCode IN (1 , 2
 /*it gives information about where is the null value in reportsTo table*/
 select lastName,firstName,reportsTo from employees where reportsTo is Null;
 
+/*8  where with comparison operators*/
 
-
-
-
-
+/*<>  or !=(Not Equal to)operator*/
+select lastname,firstname,jobtitle from employees where jobtitle <>'Sales Rep';
+/*  > (greter than) operator */
+select lastname,firstname,officeCode from employees where officeCode > 5;
+/* <= (less than or equal to) operator*/
+select lastname,firstname,officeCode from employees where officeCode <= 4;
                
                
                
