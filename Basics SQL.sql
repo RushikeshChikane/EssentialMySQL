@@ -212,3 +212,17 @@ select customername,country,creditlimit from customers where country='usa' or co
 
 
 /* IN Opertor*/
+
+/*The IN operator allows you to determine if a value matches any value in a list of values.*/
+
+SELECT 1 IN (1,2,3);   /*it returns 1 because 1=1 are in list*/
+SELECT 4 IN (1,2,3);   /*it returns 0 because 4 != anyone so is not available in list*/
+SELECT NULL IN (1,2,3);  /*it returns null because null value are not available in list*/
+SELECT 0 IN (1 , 2, 3, NULL);  /*it also return null because 0 is not equal to any value*/
+
+
+/*in this ex we find the all total countries in usa and france by using in operator*/
+select officeCode,city,phone,country from offices where country in ('usa' , 'france');
+
+/*here we can see we get same uotput with or operator*/
+select officeCode ,city,phone from offices where country = 'usa' or 'france';
