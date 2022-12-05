@@ -267,3 +267,37 @@ SELECT  productCode, productName, buyPrice FROM products WHERE buyPrice < 20 OR 
 /*To check if a value is between a date range, you should explicitly cast the value to the DATE type.*/
 /*the following statement returns the orders with the required dates between 01/01/2003 to 01/31/2003:*/
  select orderNumber , requiredDate,status from orders where requireddate between cast('2003-01-01' as date)and cast('2003-01-31' as date);
+ 
+ 
+ 
+ /*LIKE operator*/
+ 
+ /*The LIKE operator is a logical operator that tests whether a string contains a specified pattern or not.
+ /*In this syntax, if the expression matches the pattern, the LIKE operator returns 1. Otherwise, it returns 0.*/
+ /*The percentage ( % ) wildcard matches any string of zero or more characters.
+The underscore ( _ ) wildcard matches any single character.*/
+
+/*Like operator with % wildcard ex*/
+/*in this ex we find employee name whos start with 'a' by using like and % operator*/
+select employeeNumber,lastName,firstName from employees where firstName like 'a%';
+/*in this ex we fine the employee who have "on" words at the end in theri lastname with the help of like and % operator*/
+select employeeNumber,lastName,firstName from employees where lastName like '%on';
+/*in this ex we can find persons who have  "on" string in any position in their last name*/
+select employeeNumber,lastName,FirstName from employees where lastName like "%on%";
+
+/*like operator with _ wildcard*/
+
+/*To find employees whose first names start with the letter T , end with the letter m, and contain any single character between e.g., Tom , Tim,*/
+select employeeNumber,lastName,firstName from employees where firstNAme like 'T_m';
+
+/*NOT LIKE operator*/
+
+/*Suppose you want to search for employees whose last names don’t start with the letter B, you can use the NOT LIKE operator as follows:*/
+select employeeNumber,lastName,firstName from employees where lastName NOT LIKE 'B%';
+
+/*like with escape claus*/
+
+/*For example, if you want to find products whose product codes contain the string _20 , you can use the pattern %\_20% with the default escape character:*/
+SELECT productCode, productName FROM products WHERE productCode LIKE '%\_20%';
+/*you can specify a different escape character e.g., $ using the ESCAPE clause:*/
+select productCode,productName from products where productCode like '%$_20%' escape '$';
