@@ -226,3 +226,18 @@ select officeCode,city,phone,country from offices where country in ('usa' , 'fra
 
 /*here we can see we get same uotput with or operator*/
 select officeCode ,city,phone from offices where country = 'usa' or 'france';
+
+
+
+
+/*NOT IN operator*/
+
+/*The NOT operator negates the IN operator:*/
+/*The NOT IN operator returns one if the value doesn’t equal any value in the list. Otherwise, it returns 0.*/
+
+SELECT 1 NOT IN (1,2,3);  /*it shows the 1 is available in list by returnring 0*/
+SELECT 0 NOT IN (1,2,3);
+SELECT NULL NOT IN (1,2,3);
+
+/*in this ex compiler shows the countrys are ot in usa and france */
+select officeCode,city,phone from offices where country not in ('usa','france') order by city; 
