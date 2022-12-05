@@ -190,3 +190,25 @@ select lastname,firstname,officeCode from employees where officeCode <= 4;
 
 /*OR Operator */
 
+/*Boolean dependecy depend on true or false*/ 
+SELECT 1 OR 1, 1 OR 0, 0 OR 1;
+SELECT 0 OR 0;
+SELECT 1 OR NULL, 0 OR NULL, NULL or NULL;
+SELECT 1 = 1 OR 1 / 0;
+SELECT 1 OR 0 AND 0;
+SELECT (1 OR 0) AND 0;
+
+/*by using classicmodels database and customers table*/
+select * from customers;
+
+/*inthis example we can find only 2 country customers by using OR syntax*/
+select customername,country from customers where country ='usa' or country = 'france';
+
+/*in this ex we find the customers who are from only usa and france by using or operator and  also fine who have creditlim > 100000*/ 
+select customername,country,creditlimit from customers where (country='usa' or country ='france') and creditlimit >100000;
+
+/* in this ex we cant use paranthisis() so the compiler gives all information who have 2 countries with less creditlit or > 100000 creditlimt*/
+select customername,country,creditlimit from customers where country='usa' or country ='france' and creditlimit > 100000;
+
+
+/* IN Opertor*/
