@@ -301,3 +301,51 @@ select employeeNumber,lastName,firstName from employees where lastName NOT LIKE 
 SELECT productCode, productName FROM products WHERE productCode LIKE '%\_20%';
 /*you can specify a different escape character e.g., $ using the ESCAPE clause:*/
 select productCode,productName from products where productCode like '%$_20%' escape '$';
+
+
+/* LIMIT claus*/
+
+/*Syntaxes
+select select_list from table_name limit [offset,]row_count;
+LIMIT row_count;
+LIMIT 0 , row_count;
+LIMIT row_count OFFSET offset;
+SELECT select_list FROM  table_name ORDER BY sort_expression LIMIT offset, row_count;*/
+
+/*This statement uses the LIMIT clause to get the top five customers who have the highest credit:*/
+select customerNumber,customerName,creditLimit from customers order by creditLimit desc limit 5;
+/*creditlimit low to high*/
+select customerNumber,customerName,creditLimit from customers order by creditLimit  limit 5;
+/*list in assending order sequencewise*/
+select customerNumber,customerName,creditLimit from customers order by creditLimit,customerNumber limit 5;
+
+/*limit claus for pagination*/
+
+/*this statement gives us the total no of rows in customers table by using count(*)statement*/
+SELECT COUNT(*)  FROM customers;
+
+/* in this statement gives only 10 rows information customers name in default asce order*/
+select customerNumber,customerName from customers order by customerName limit 10;
+/*in this ex we find the data of customers name by asc default order from no 10 to 20 no customers*/
+select customerNumber,customerName from customers order by customerName limit 10,10;
+
+/*nth highest lowest value*/
+/*statement
+select select_list from table_name order ny sort_expression limit n-1,1;
+*/
+
+/*The clause LIMIT n-1, 1 returns 1 row starting at the row n.
+For example, the following finds the customer who has the second-highest credit:*/
+select customerName,creditLimit from customers order by creditLimit desc limit 1,1;
+
+/*This query returns all customers sorted by credits from high to low:*/
+select customerName,creditLimit from customers order by creditLimit desc;
+
+
+/*Limit and Distinct claus*/
+
+/*If you use the LIMIT clause with the DISTINCT clause, MySQL immediately stops searching when it finds the number of 
+unique rows specified in the LIMIT clause.*/
+
+/*The example uses the LIMIT clause with the DISTINCT clause to return the first five unique states in the customers table:*/
+select distinct state from customers where state is not null limit 5;
