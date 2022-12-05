@@ -241,3 +241,29 @@ SELECT NULL NOT IN (1,2,3);
 
 /*in this ex compiler shows the countrys are ot in usa and france */
 select officeCode,city,phone from offices where country not in ('usa','france') order by city; 
+
+
+/*BETWEEN operator*/
+
+SELECT 15 BETWEEN 10 AND 20;  /*the following statement returns 1 because 15 is between 10 and 20*/
+SELECT 15 BETWEEN 20 AND 30;  /*The following example returns 0 because 15 is not between 20 and 30*/
+
+/*this statements helps to find out the product who have value between 90 and 100 from pruducts*/
+select productCode,productName,buyPrice from products where buyPrice between 90 and 100;
+/*this statements helps to find out the product who have value between 90 and 100 from pruducts*/
+select productCode,productName,buyPrice from products where buyPrice >= 90 and buyPrice <=100;
+
+
+
+/*NOT Between*/
+SELECT 15 NOT BETWEEN 10 AND 20; /*the following statement returns 0 because 15 is not between 10 and 20 is not true*/
+/*it shows the products who have value in not between 20 and 100*/ 
+select productCode,productName,buyPrice from products where buyPrice NOT BETWEEN 20 and 100;
+/*same operation using less than and gretr than operator*/
+SELECT  productCode, productName, buyPrice FROM products WHERE buyPrice < 20 OR buyPrice > 100;
+
+/*BETWEEN operator with dates example*/
+
+/*To check if a value is between a date range, you should explicitly cast the value to the DATE type.*/
+/*the following statement returns the orders with the required dates between 01/01/2003 to 01/31/2003:*/
+ select orderNumber , requiredDate,status from orders where requireddate between cast('2003-01-01' as date)and cast('2003-01-31' as date);
