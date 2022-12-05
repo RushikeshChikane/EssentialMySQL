@@ -349,3 +349,19 @@ unique rows specified in the LIMIT clause.*/
 
 /*The example uses the LIMIT clause with the DISTINCT clause to return the first five unique states in the customers table:*/
 select distinct state from customers where state is not null limit 5;
+
+/*NULL operator*/
+
+/*The following query uses the IS NULL operator to find customers who do not have a sales representative:*/
+SELECT customerName,  country, salesrepemployeenumber FROM customers WHERE salesrepemployeenumber IS NULL ORDER BY customerName; 
+/*This example uses the IS NOT NULL operator to get the customers who have a sales representative:*/
+select customerName,country,salesrepemployeenumber from customers where salesrepemployeenumber is not null order by customerName;
+
+
+/*null - specilizer featuers*/
+
+
+
+
+
+
